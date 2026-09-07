@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Album Tracker</title></head>
+    <body>
+        <h1>Welcome to Album Tracker</h1>
+        <ul>
+            {% for album in albums %}
+                <li>{{ album.name }}</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
