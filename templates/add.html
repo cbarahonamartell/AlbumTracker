@@ -2,13 +2,18 @@
 <html>
     <body>
         <form method="POST">
-            <input type="text" name="album_name">
-            <buttom type="submit">Add Album</buttom>
+            <input type="text" name="search_query">
+            <button type="submit">Add Album</button>
         </form>
         {% if results %}
         <ul>
             {% for album in results %}
-            <li>{{ album.name }} by {{ album.artist}}</li>
+            <form method="POST">
+                <li>{{ album.name }} by {{ album.artist }}</li>
+                <input type="hidden" name="album_name" value="{{ album.name }}">
+                <input type="hidden" name="artist_name" value="{{ album.artist }}">
+                <button type ="submit">Add this album</button>
+            </form>
         {% endfor %}
         </ul>
         {% endif %}

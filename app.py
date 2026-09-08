@@ -35,6 +35,7 @@ def search_album(query):
 class Album(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100),nullable=False)
+    artist = db.Column(db.String(100), nullable=False)
 
 with app.app_context():
     db.create_all()
@@ -51,9 +52,16 @@ def about():
 @app.route("/add", methods=["GET", "POST"])
 def add_album():
     if request.method == "POST":
-        query = request.form["album_name"]
-        results = search_album(query)
-        return render_template('add.html', results=results)
+        if "search_query" in request.form:
+            query = request.form["search_query"]
+            results = search_album(query)
+            return render_template('add.html', results=results)
+        elif "album_name" in request.form:
+            album_name = request.form["album_name"]
+            artist_name = request.form["artist_name"]
+            new_album = Album(name=album_name, artist = artist_name)
+            db.session.add(new_album)
+            db.session.commit()
     return render_template("add.html")
 
 
