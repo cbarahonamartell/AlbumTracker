@@ -5,5 +5,12 @@
             <input type="text" name="album_name">
             <buttom type="submit">Add Album</buttom>
         </form>
+        {% if results %}
+        <ul>
+            {% for album in results %}
+            <li>{{ album.name }} by {{ album.artist}}</li>
+        {% endfor %}
+        </ul>
+        {% endif %}
     </body>
 </html>
