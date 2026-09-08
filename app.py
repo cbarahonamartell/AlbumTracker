@@ -3,6 +3,7 @@ import os
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 import requests
+from datetime import datetime, timezone
 
 load_dotenv()
 
@@ -36,6 +37,9 @@ class Album(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100),nullable=False)
     artist = db.Column(db.String(100), nullable=False)
+    rating = db.Column(db.Float, nullable=True)
+    review = db.Column(db.String(5000),nullable=True)
+    date_logged = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
 
 with app.app_context():
     db.create_all()
@@ -59,7 +63,9 @@ def add_album():
         elif "album_name" in request.form:
             album_name = request.form["album_name"]
             artist_name = request.form["artist_name"]
-            new_album = Album(name=album_name, artist = artist_name)
+            rating = float(request.form['rating'])
+            review = request.form['review']
+            new_album = Album(name=album_name, artist= artist_name, rating=rating, review=review)
             db.session.add(new_album)
             db.session.commit()
     return render_template("add.html")

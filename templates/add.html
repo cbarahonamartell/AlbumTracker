@@ -12,6 +12,18 @@
                 <li>{{ album.name }} by {{ album.artist }}</li>
                 <input type="hidden" name="album_name" value="{{ album.name }}">
                 <input type="hidden" name="artist_name" value="{{ album.artist }}">
+                <textarea name="review"></textarea>
+                <select name = "rating">
+                    <option value ='1'>1</option>
+                    <option value ='1.5'>1.4</option>
+                    <option value ='2'>2</option>
+                    <option value ='2.5'>2.5</option>
+                    <option value ='3'>3</option>
+                    <option value ='3.5'>3.5</option>
+                    <option value ='4'>4</option>
+                    <option value ='4.5'>4.5</option>
+                    <option value ='5'>5</option>
+                </select>
                 <button type ="submit">Add this album</button>
             </form>
         {% endfor %}
