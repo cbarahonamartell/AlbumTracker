@@ -23,9 +23,10 @@ def search_album(query):
     results =[]
     token = get_spotify_token()
     headers = {'Authorization':f'Bearer {token}'}
-    params = {'q': query,  'type':'album'}
+    params = {'q': query,  'type':'album', "limit":10}
     album_response = requests.get('https://api.spotify.com/v1/search', headers=headers, params=params)
     album_data = album_response.json()
+    print(album_data)
     for item in album_data['albums']['items']:
         album_name = item['name']
         artist_name = item['artists'][0]['name']
