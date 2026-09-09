@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 import requests
 from datetime import datetime, timezone
@@ -72,6 +72,15 @@ def add_album():
             db.session.add(new_album)
             db.session.commit()
     return render_template("add.html")
+
+@app.route('/delete', methods=['POST'])
+def delete_album():
+    album_id = request.form['album_id']
+    album = Album.query.get(album_id)
+    db.session.delete(album)
+    db.session.commit()
+    return redirect(url_for('home'))
+
 
 
 if __name__ == "__main__":

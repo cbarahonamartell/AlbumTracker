@@ -6,10 +6,14 @@
         <ul>
             {% for album in albums %}
                 <li>{{ album.name }} by {{ album.artist }}</li>
-                <img src = '{{ album. image }}' width='100'>
+                <img src = '{{ album.image }}' width='100'>
                 <dd>{{ album.review }}</dd>
                 <dd>{{ album.rating }}</dd>
                 <dd>{{ album.date_logged }}</dd>
+                <form method='POST' action='/delete'>
+                    <input type="hidden" name="album_id" value="{{ album.id }}">
+                    <button type ="submit">Delete</button>
+                </form>
             {% endfor %}
         </ul>
     </body>
