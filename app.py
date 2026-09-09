@@ -29,7 +29,8 @@ def search_album(query):
     for item in album_data['albums']['items']:
         album_name = item['name']
         artist_name = item['artists'][0]['name']
-        album_info = {'name': album_name, 'artist': artist_name}
+        image_url = item['images'][0]['url']
+        album_info = {'name': album_name, 'artist': artist_name, 'image_url': image_url}
         results.append(album_info)
     return results
 
@@ -40,6 +41,7 @@ class Album(db.Model):
     rating = db.Column(db.Float, nullable=True)
     review = db.Column(db.String(5000),nullable=True)
     date_logged = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
+    image = db.Column(db.String(300), nullable=True)
 
 with app.app_context():
     db.create_all()
@@ -65,7 +67,8 @@ def add_album():
             artist_name = request.form["artist_name"]
             rating = float(request.form['rating'])
             review = request.form['review']
-            new_album = Album(name=album_name, artist= artist_name, rating=rating, review=review)
+            image_url = request.form['album_image']
+            new_album = Album(name=album_name, artist= artist_name, rating=rating, review=review, image=image_url)
             db.session.add(new_album)
             db.session.commit()
     return render_template("add.html")
