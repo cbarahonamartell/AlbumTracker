@@ -58,11 +58,11 @@ python app.py
 ### 6. Visit locally in your browser
 
 ## Usage
-- Upon landing on the homepage, click add in the navbar at the top to be transported to the add page
-- On the add page, search for an album on in the search bar, pressing the search album button for albums to appear.
-- Pick an album, add a rating and optional review and click add this album.
-- To view collection of reviews, go back to the home page.
-- Delete reviews if desired.
+1. Upon landing on the homepage, click **Add** in the navbar at the top to open the add page
+2. On the add page, search for an album using the search bar, and click **Search Album**.
+3. Pick an album, add a rating and optional review and click **Add this Album**.
+4. To view collection of reviews, go back to the home page.
+5. Delete reviews if desired.
 
 ## Roadmap:
 - User authentication, perhaps involving the Spotify API, so that people can make accounts or login with Spotify account, and to allow multiple user usage
