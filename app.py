@@ -81,6 +81,8 @@ def add_album():
 def delete_album():
     album_id = request.form['album_id']
     album = Album.query.get(album_id)
+    if album == None:
+        return redirect(url_for('home'))
     db.session.delete(album)
     db.session.commit()
     return redirect(url_for('home'))
