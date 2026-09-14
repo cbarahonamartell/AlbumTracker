@@ -15,14 +15,18 @@ A personal website for reviewing music albums, similar to film review applicatio
  - Python
  - Flask
  - SQLAlchemy
+
 -**Database:**
  - SQLite
+
 -**Frontend:**
  - HTML
  - Jinja2
  - Bootstrap
+
 -**External API:**
  - Spotify API
+
 -**Deployment:**
  - Render with GitHub connection
 ### Installation:
