@@ -61,8 +61,11 @@ def add_album():
     if request.method == "POST":
         if "search_query" in request.form:
             query = request.form["search_query"]
-            results = search_album(query)
-            return render_template('add.html', results=results)
+            if query.strip() == "":
+                return render_template('add.html')
+            else:
+                results = search_album(query)
+                return render_template('add.html', results=results)
         elif "album_name" in request.form:
             album_name = request.form["album_name"]
             artist_name = request.form["artist_name"]
