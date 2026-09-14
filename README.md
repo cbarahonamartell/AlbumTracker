@@ -10,26 +10,27 @@ A personal website for reviewing music albums, similar to film review applicatio
 - Delete album entries when user no longer wants them
 - UI styled in Bootstrap dark theme
 
-## Stack and Setup:
--**Backend:** 
+## Tech Stack:
+- **Backend:** 
  - Python
  - Flask
  - SQLAlchemy
 
--**Database:**
+- **Database:**
  - SQLite
 
--**Frontend:**
+- **Frontend:**
  - HTML
  - Jinja2
  - Bootstrap
 
--**External API:**
+- **External API:**
  - Spotify API
 
--**Deployment:**
+- **Deployment:**
  - Render with GitHub connection
-### Installation:
+
+## Installation:
 **Requirements:** Python 3.10+ and Spotify Developer account
 1. Clone the repo:
  - git clone https://github.com/yourusername/album-tracker.git
