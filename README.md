@@ -60,16 +60,16 @@ python app.py
 ## Usage
 1. Upon landing on the homepage, click **Add** in the navbar at the top to open the add page
 2. On the add page, search for an album using the search bar, and click **Search Album**.
-3. Pick an album, add a rating and optional review and click **Add this Album**.
-4. To view collection of reviews, go back to the home page.
+3. Select an album, add a rating and optional review and click **Add this Album**.
+4. To view collection of reviews, return to the home page.
 5. Delete reviews if desired.
 
 ## Roadmap:
-- User authentication, perhaps involving the Spotify API, so that people can make accounts or login with Spotify account, and to allow multiple user usage
-- Sorting/filtering when viewing personal collection of reviews, perhaps by date reviewed, and album info (genre, artist, etc)
-- Edit button for existing entries, Relisten button for full relisten sessions of albums in the review section on the add page
-- Fix for duplicate submission bug and bugs using browser arrows
-- Fine tuned searching
+- [ ] User authentication, perhaps involving the Spotify API, so that people can make accounts or login with Spotify account, and to allow multiple user usage
+- [ ] Sorting/filtering when viewing personal collection of reviews, perhaps by date reviewed, and album info (genre, artist, etc)
+- [ ] Edit button for existing entries, Relisten button for full relisten sessions of albums in the review section on the add page
+- [ ] Fix for duplicate submission bug and bugs using browser arrows
+- [ ] Fine tuned searching
 
 ## Project Status:
 Developed as of September 2026 by Carlos Barahona Martell as a personal portfolio project. Development will slow down as I will be busy through the academic school year though I will try to make commitments.
