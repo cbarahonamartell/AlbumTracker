@@ -11,41 +11,51 @@ A personal website for reviewing music albums, similar to film review applicatio
 - UI styled in Bootstrap dark theme
 
 ## Tech Stack:
-- **Backend:** 
- - Python
- - Flask
- - SQLAlchemy
+- **Backend:**
+  - Python
+  - Flask
+  - SQLAlchemy
 
 - **Database:**
- - SQLite
+  - SQLite
 
 - **Frontend:**
- - HTML
- - Jinja2
- - Bootstrap
+  - HTML
+  - Jinja2
+  - Bootstrap
 
 - **External API:**
- - Spotify API
+  - Spotify API
 
 - **Deployment:**
- - Render with GitHub connection
+  - Render with GitHub connection
 
 ## Installation:
 **Requirements:** Python 3.10+ and Spotify Developer account
-1. Clone the repo:
- - git clone https://github.com/yourusername/album-tracker.git
- - cd album-tracker
-2. Create and activate a virtual environment:
- - python -m venv venv
- - source venv/bin/activate
-3. Install dependencies:
- - pip install -r requirements.txt
-4. Create .env file with your Spotify credentials:
- - SPOTIFY_CLIENT_ID=your_id
- - SPOTIFY_CLIENT_SECRET=your_secret
-5. Run app:
- - python app.py
-6. Visit locally in your browser
+### 1. Clone the repo:
+```bash
+git clone https://github.com/yourusername/album-tracker.git
+cd album-tracker
+```
+### 2. Create and activate a virtual environment:
+```
+python -m venv venv
+source venv/bin/activate
+```
+### 3. Install dependencies:
+```
+pip install -r requirements.txt
+```
+### 4. Create .env file with your Spotify credentials:
+```
+SPOTIFY_CLIENT_ID=your_id
+SPOTIFY_CLIENT_SECRET=your_secret
+```
+### 5. Run app:
+```
+python app.py
+```
+### 6. Visit locally in your browser
 
 ## Usage
 - Upon landing on the homepage, click add in the navbar at the top to be transported to the add page
