@@ -42,7 +42,7 @@ A personal website for reviewing music albums, similar to film review applicatio
 4. Create .env file with your Spotify credentials:
  - SPOTIFY_CLIENT_ID=your_id
  - SPOTIFY_CLIENT_SECRET=your_secret
-5.Run app:
+5. Run app:
  - python app.py
 6. Visit locally in your browser
 
